@@ -10,7 +10,7 @@ document.onreadystatechange = () => {
       const modifyPage = () => {
         // modify page
         document.body.style.backgroundColor =  'lime';
-        let p = document.createElement("p");
+        const p = document.createElement("p");
         p.innerText = "let's add some text to the page";
         document.body.appendChild(p);
       };
