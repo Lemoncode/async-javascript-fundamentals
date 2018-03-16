@@ -1,0 +1,16 @@
+{
+  "name": "startupmain",
+  "version": "1.0.0",
+  "description": "Demos start up point",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp"
+  },
+  "author": "Jaime Salas",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-open": "^2.0.0"
+  }
+}
