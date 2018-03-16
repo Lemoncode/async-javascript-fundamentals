@@ -216,6 +216,8 @@ longTask(postMessage);
 </html>
 
 ```
-* En conclusión, uando el web worker se ejecuta, crunchNumbers es llamado, postMessage es la función que se usa para mandar mensajesal principal, el engine de JavaScript que controla la UI.
+// TODO: Translate
+
+* En conclusión, cuando el web worker se ejecuta, `longTask` es llamado, `postMessage` es la función que se usa para mandar mensajes al principal, el engine de JavaScript que controla la UI.
 * Este ejemplo de IPC, en realidad no lo es. Este web workerque hemos creado con new, es un web worker dedicado, sólo es un thread que se ejecuta dentro del mismo proceso, pero aún así tenemos cierta separación entre la ejecución del JavaScript que esta ejcutando estos workers. 
 * Existe una asincronicidad debido a la separación de hilos. Los shared workers, si ejecutan sus propios procesos, y son un ejemplo claro de IPC.
