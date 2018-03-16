@@ -85,4 +85,3 @@
 
 * If we change `requestDelay` to `10`, the avarage gets closer to `10ms`. The reason that this is happen is because by default the browser will set a value close to 4 by default.
 
-* El delay lo inicializamos a 0, cuando lo ejecutamos, estamos pidiendo un delay de 0, pero en el avarage llega cerca de los 5 ms. Lo cambiamos a 10 ms. y la media de resultado que nos da es mucho más proxima a 10ms. La razón de que ocurra esto, es que cuando nosotros ponemos 10 ms, el navegador lo va a modificar para que sean 4ms.
