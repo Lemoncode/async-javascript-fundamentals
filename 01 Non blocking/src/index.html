@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./content/site.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <img src="http://bazisgroup.com/wp-content/uploads/2017/07/game-of-thrones-photo.jpg" alt="Game of Thrones">
+    </header>
+    <div class="content">
+        <div class="search">
+            <div class="search search_item">
+                <span>House</span>
+                <input id="input-house" type="text" placeholder="house" />
+            </div>
+            <div class="search search_item">
+                <span>Character</span>
+                <input id="input-character" type="text" placeholder="character" />
+            </div>
+            <button id="search_button" class="search search_button">Search</button>
+        </div>
+        <div class="display">
+            <div class="houses" id="houses"></div>
+            <div class="characters" id="characters"></div>
+        </div>
+    </div>
+    <script src="./js/apiIceAndFire.js"></script>
+    <script src="./js/mapper.js"></script>
+    <script src="./js/printService.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

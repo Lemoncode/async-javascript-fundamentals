@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+.content {
+    margin: 3rem;
+}
+
+header {
+    text-align: center;
+    background-color: black;
+}
+
+header img {
+    display: inline-block;
+    min-width: 30%;
+    max-height: 150px;
+}
+
+span {
+    margin: auto 0;
+}
+
+button {
+    border-radius: 3px / 5px;  
+    background-color: rgba(220, 220, 220, 0.9);
+    border: 1.5px solid rgba(90,90,90,0.4);
+}
+
+button:hover {
+    background-color: rgba(220, 220, 220, 0.2);
+}
+
+input {
+    display: inline-block;
+    border-radius: 3px / 5px;
+    border: 1.5px solid rgba(90,90,90,0.4);
+    background: rgba(220,220,220,0.16);
+    padding: 0.2rem 0.4rem;
+    margin-left: 0.5rem;
+    width: 15rem;
+}
+
+.search {
+    display: flex;
+    flex-flow: row;
+}
+
+.search.search_item {
+    flex-grow: 2;
+}
+
+.search.search_button {
+    align-content: flex-end;
+}
+
+.display {
+    display: flex;
+}
+
+.display .houses {
+    flex-grow: 2;
+}
+
+.display .characters {
+    flex-grow: 1;
+}
