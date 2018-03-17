@@ -1,4 +1,18 @@
-## En esta demo vamos a ver como establecer la naturaleza no bloqueante de JS
+## In order to get the code working:
+
+* Open terminal at the same level as `package.json`, and type:
+```bash
+$ npm install
+```
+* After installation, we can run the application using:
+```bash
+$ npm install
+```
+* To get results on the open browser app:
+    * house: `House Lannister of Casterly Rock`
+    * character input: `Jaime Lannister`
+
+## In this demo we are going to stablish the blocking nature of JavaScript
 
 ## Steps.
 
@@ -42,9 +56,7 @@ var apiWeather = apiWeather || {};
 })(apiWeather);
 
 ```
-
-* De esta manera XHR, funciona de manera síncrona.
-* Mirar los console logs para ver en que orden se ejecutan las cosas. 
+* This way `XHR` work SYNC.
 
 ### 2. Now if we change these values again we can watch that goes on parallel
 

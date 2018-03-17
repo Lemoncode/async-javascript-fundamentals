@@ -1,4 +1,4 @@
-## In orde to get the demo working:
+## In order to get the code working:
 
 * Open terminal at the same level as `package.json`, and type:
 ```bash
