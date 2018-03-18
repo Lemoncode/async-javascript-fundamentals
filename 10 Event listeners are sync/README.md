@@ -1,6 +1,8 @@
-## In this demo we are going to work with Event Listeners.
+# In this demo we are going to work with Event Listeners
+
 * Folder structure:
 
+```bash
 10 Web Workers/
 ├── src/
 │   ├── content/
@@ -10,15 +12,16 @@
 │   ├── index.html
 ├── gulpfile.js
 ├── package.json
+```
 
 * Start from previous code demo.
 
-## Steps.
+## Steps
 
-### 1. Refactor the `index.html` for our demo.
+### 1. Refactor the `index.html` for our demo
 
 ```diff html
-<!doctype html>
+<!DOCTYPE html>
 
 <html lang="en">
 <head>
@@ -40,7 +43,7 @@
 
 ```
 
-### 2. Lets change our `site.css`, for this demo. 
+### 2. Lets change our `site.css`, for this demo
 
 ```diff site.css
 @import url('https://fonts.googleapis.com/css?family=Raleway');
@@ -91,9 +94,12 @@ body {
 -}
 -
 ```
+
 ### 3. Now we can add `main.js`
 
-```javascript main.js
+```javascript
+main.js
+
 (function () {
   const btn = document.getElementById('btn');
 
@@ -113,8 +119,18 @@ body {
 })();
 
 ```
-### Challanege -> ¿Cuantos programas pequeños tenemos aquí? // 2
-###¿Y cuando lo ejecutemos que se verá en la consola? // pre-click click-1 click-2 post-click
+
+### Challenge -> ¿Cuántos programas pequeños tenemos aquí?
+
+```javascript
+// 2
+```
+
+### ¿Y cuándo lo ejecutemos que se verá en la consola? 
+
+```javascript
+// pre-click click-1 click-2 post-click
+```
 
 * Lo normal es tender a pensar que hubiera 3 o 4 pequeños programas. Habría 4, si los EventListeners fueran disparados de manera asíncrona, pero los EventListeners son disparados de forma síncrona.
 
