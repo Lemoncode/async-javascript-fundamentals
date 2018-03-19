@@ -16,19 +16,32 @@ document.onreadystatechange = () => {
                     err: handleError,
                     callback: handleHousesRequestSucces(apiMapper, printer)
                 };
-                service.getHousesByName(houseInput.value, housesRequestConfig);
+                
                 console.log('2');
                 const charactersRequestConfig = {
                     err: handleError,
                     callback: handleCharactersRequestSuccess(apiMapper, printer)
                 };
-                service.getCharactersByName(characterInput.value, charactersRequestConfig);
+
+                asyncservice ("GETHOUSE", function (){
+                    service.getHousesByName(houseInput.value, housesRequestConfig);
+                    asyncservice("GETPERSONAJE",function (){
+                        service.getCharactersByName(characterInput.value, charactersRequestConfig);
+                    })
+                });
+
                 console.log('3');
             } else {
                 alert('Introduce a values')
             }
         });
     };
+
+    function asyncservice (tipo, callback)
+    {  
+        console.log('Ejecución proceso =', tipo); 
+        callback ();
+    }
 
     function handleError() {
         console.log(JSON.parse(this.responseText));
