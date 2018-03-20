@@ -6,7 +6,7 @@ $ npm install
 ```
 * After installation, we can run the application using:
 ```bash
-$ npm install
+$ npm start
 ```
 * To get results on the open browser app:
     * house: `House Lannister of Casterly Rock`
@@ -14,14 +14,15 @@ $ npm install
 
 ## In this demo we are going to study the non blocking nature of JavaScript
 
-* Just one thing can happen per time in JavaScript. But the required time to get data loaded is really short. Is not just to have a really good network capabilities, there is another reason.
+* Just one thing can happen at a time in JavaScript. But the required time to get data loaded is really short. This is not just because good network capabilities. There is another reason.
 
-* Looking into the code this reason is not so obviously.We can think looking the `main.js` code that:
+* Looking into the code, this reason doesn't seem so obvious. We could think, by looking at `main.js` code, that:
     * While this request `service.getHousesByName(houseInput.value, housesRequestConfig);` does not end...
     * This one `service.getCharactersByName(characterInput.value, charactersRequestConfig);` is not going to start
 
-* If we already have been working with callbacks, we are use to initialize a request and then proceed with the execution.
+* If we have been already working with callbacks, we are used to initialize a request and then proceed with the execution.
 
-* But if just one thing per time it's executed, how is this possible?
+* But if just one thing at a time is executed, how is this possible?
 
-* Opening the developer tools on Chrome, open the network tab. Here  we can watch that the requests are sending concurrently.
+* Inside Chrome developer tools, on the network tab, we can notice that the requests are being sent concurrently.
+
