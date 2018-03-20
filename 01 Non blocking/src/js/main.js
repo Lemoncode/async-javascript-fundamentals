@@ -9,20 +9,22 @@ document.onreadystatechange = () => {
             event.stopPropagation();
             const houseInput = document.getElementById('input-house');
             const characterInput = document.getElementById('input-character');
-            
+
             if (houseInput.value && characterInput.value) {
                 console.log('1');
                 const housesRequestConfig = {
                     err: handleError,
                     callback: handleHousesRequestSucces(apiMapper, printer)
                 };
-                service.getHousesByName(houseInput.value, housesRequestConfig);
-                console.log('2');
-                const charactersRequestConfig = {
-                    err: handleError,
-                    callback: handleCharactersRequestSuccess(apiMapper, printer)
-                };
-                service.getCharactersByName(characterInput.value, charactersRequestConfig);
+              service.getHousesByName(houseInput.value, housesRequestConfig);
+              setTimeout(() => {
+                  console.log('2');
+                  const charactersRequestConfig = {
+                      err: handleError,
+                      callback:handleCharactersRequestSuccess(apiMapper, printer)
+                  };
+                  service.getCharactersByName(characterInput.value, charactersRequestConfig);
+                },3000);
                 console.log('3');
             } else {
                 alert('Introduce a values')
