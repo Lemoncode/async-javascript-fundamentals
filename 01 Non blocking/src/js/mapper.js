@@ -11,7 +11,7 @@ var mapper = mapper || {};
             }))
         );
 
-        const caracthersMap = (characters) => (
+        const charactersMap = (characters) => (
             characters.map(c => ({
                 name: c.name,
                 born: c.born,
@@ -21,7 +21,7 @@ var mapper = mapper || {};
         
         return {
             housesMap,
-            caracthersMap
+            charactersMap
         }
     };
 })(mapper)

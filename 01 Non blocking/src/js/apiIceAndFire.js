@@ -19,7 +19,7 @@ const getRequest = (config) => {
 };
 
 const sendGetRequest = (req, url) => {
-    req.open('get', url, false); // setting async to false, send() does not return until the response is received, then is forced to work synchronously
+    req.open('get', url, true);
     req.send();
 };
 
