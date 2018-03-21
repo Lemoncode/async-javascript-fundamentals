@@ -25,4 +25,3 @@ $ npm start
 * But if just one thing at a time is executed, how is this possible?
 
 * Inside Chrome developer tools, on the network tab, we can notice that the requests are being sent concurrently.
-
