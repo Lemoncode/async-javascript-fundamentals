@@ -12,35 +12,43 @@ document.onreadystatechange = () => {
 
             if (houseInput.value && characterInput.value) {
                 console.log('1');
-                const housesRequestConfig = {
-                    err: handleError,
-                    callback: handleHousesRequestSucces(apiMapper, printer)
-                };
+              const charactersRequestConfig = {
+                  err: handleError,
+                  callback:handleCharactersRequestSuccess(apiMapper, printer),
+                  charService: service,
+                  charName: characterInput.value
+              };
+              const housesRequestConfig = {
+                  err: handleError,
+                  callback: handleHousesRequestSuccess(apiMapper, printer, getCharacters, charactersRequestConfig)
+              };
+              console.log('house call');
               service.getHousesByName(houseInput.value, housesRequestConfig);
-              setTimeout(() => {
-                  console.log('2');
-                  const charactersRequestConfig = {
-                      err: handleError,
-                      callback:handleCharactersRequestSuccess(apiMapper, printer)
-                  };
-                  service.getCharactersByName(characterInput.value, charactersRequestConfig);
-                },3000);
-                console.log('3');
+              console.log('3');
             } else {
-                alert('Introduce a values')
+                alert('Introduce values')
             }
         });
     };
+
+    function getCharacters (charactersRequestConfig) {
+      //const service = new apiIceAndFire.Service();
+      charactersRequestConfig.charService.getCharactersByName(charactersRequestConfig.charName, charactersRequestConfig);
+      console.log('character Call');
+    }
 
     function handleError() {
         console.log(JSON.parse(this.responseText));
     };
 
-    function handleHousesRequestSucces(apiMapper, printer) {
+    function handleHousesRequestSuccess(apiMapper, printer, callback, charactersRequestConfig) {
         return function () {
             const data = JSON.parse(this.responseText);
             const houses = apiMapper.housesMap(data);
             printer.printHouses(houses, 'houses');
+            if(callback){
+              callback(charactersRequestConfig);
+            }
         };
     };
 
@@ -56,3 +64,4 @@ document.onreadystatechange = () => {
         load();
     }
 };
+
