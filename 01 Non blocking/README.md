@@ -6,7 +6,7 @@ $ npm install
 ```
 * After installation, we can run the application using:
 ```bash
-$ npm install
+$ npm start
 ```
 * To get results on the open browser app:
     * house: `House Lannister of Casterly Rock`
