@@ -12,18 +12,18 @@ document.onreadystatechange = () => {
             
             if (houseInput.value && characterInput.value) {
                 console.log('1');
+                const charactersRequestConfig = {
+                    err: handleError,
+                    service: service,
+                    input: characterInput.value,
+                    callback: handleCharactersRequestSuccess(apiMapper, printer)
+                };
                 const housesRequestConfig = {
                     err: handleError,
-                    callback: handleHousesRequestSucces(apiMapper, printer)
+                    callback: handleHousesRequestSucces(apiMapper, printer, charactersRequestConfig)
                 };
                 service.getHousesByName(houseInput.value, housesRequestConfig);
                 console.log('2');
-                const charactersRequestConfig = {
-                    err: handleError,
-                    callback: handleCharactersRequestSuccess(apiMapper, printer)
-                };
-                service.getCharactersByName(characterInput.value, charactersRequestConfig);
-                console.log('3');
             } else {
                 alert('Introduce a values')
             }
@@ -34,11 +34,13 @@ document.onreadystatechange = () => {
         console.log(JSON.parse(this.responseText));
     };
 
-    function handleHousesRequestSucces(apiMapper, printer) {
+    function handleHousesRequestSucces(apiMapper, printer, {err, service, input, callback}) {
         return function () {
             const data = JSON.parse(this.responseText);
             const houses = apiMapper.housesMap(data);
             printer.printHouses(houses, 'houses');
+            service.getCharactersByName(input, {err,callback});
+            console.log('3');
         };
     };
 
