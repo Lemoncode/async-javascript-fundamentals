@@ -1,0 +1,19 @@
+{
+  "name": "promises_demo",
+  "version": "1.0.0",
+  "description": "Promises ES6",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html"
+  },
+  "keywords": [
+    "Promises",
+    "ES6"
+  ],
+  "author": "Jaime Salas",
+  "license": "MIT",
+  "dependencies": {
+    "parcel": "^1.8.1"
+  }
+}

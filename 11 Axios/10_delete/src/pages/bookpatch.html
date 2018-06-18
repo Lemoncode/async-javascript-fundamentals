@@ -1,0 +1,41 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>LEMONCODE 16/17 Async JavaScript jQuery</title>
+  <link rel="stylesheet" href="../content/site.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+  <h2>Book patch</h2>
+  <div clas="container-add-book">
+    <form>
+      Id:</br>
+      <input type="text" id="_id" name="_id" />
+      <br/>
+
+      Title:</br>
+      <input type="text" id="title" name="title" />
+      <br/>
+
+      Genre:</br>
+      <input type="text" id="genre" name="genre" />
+      <br/>
+
+      Author:</br>
+      <input type="text" id="author" name="author" />
+      </br>
+
+      Have you read this book?:</br>
+      <input type="checkbox" id="read" name="read" />
+      <button id="container-patch-book-form-submit">Patch book</button>
+      <button id="container-delete-book-form-submit">Delete book</button>
+    </form>
+  </div>
+  <div id="books-container" class="container">
+    <p>Modified book</p>
+  </div>
+  <script src="./bookpatch/main.js"></script>
+</body>
+</html>
