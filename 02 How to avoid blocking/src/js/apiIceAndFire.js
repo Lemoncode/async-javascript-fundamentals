@@ -1,5 +1,3 @@
-var apiIceAndFire = apiIceAndFire || {};
-
 const baseRequestFactory = ({err, callback}) => {
     const req = new XMLHttpRequest();
     req.onload = callback;
@@ -23,34 +21,32 @@ const sendGetRequest = (req, url) => {
     req.send();
 };
 
-((apiIceAndFire) => {
-    apiIceAndFire.Service = class Service {
-        constructor() {
-            this.baseUrl = 'https://www.anapioficeandfire.com/api';
-        }
-        
-        getHouseById(id, config) {
-            const req = getRequest(config);
-            const url =  `${this.baseUrl}/houses/${id}`;
-            sendGetRequest(req, url);
-        }
-
-        getCharacterById(id, config) {
-            const req = getRequest(config);
-            const url = `${this.baseUrl}/characters/${id}`;
-            sendGetRequest(req, url);
-        }
-
-        getHousesByName(name, config) {
-            const req = getRequest(config);
-            const url =  `${this.baseUrl}/houses?name=${name}`;
-            sendGetRequest(req, url);
-        }
-
-        getCharactersByName(name, config) {
-            const req = getRequest(config);
-            const url = `${this.baseUrl}/characters?name=${name}`;
-            sendGetRequest(req, url);
-        }
+export default class Service {
+    constructor() {
+        this.baseUrl = 'https://www.anapioficeandfire.com/api';
     }
-})(apiIceAndFire)
+    
+    getHouseById(id, config) {
+        const req = getRequest(config);
+        const url =  `${this.baseUrl}/houses/${id}`;
+        sendGetRequest(req, url);
+    }
+
+    getCharacterById(id, config) {
+        const req = getRequest(config);
+        const url = `${this.baseUrl}/characters/${id}`;
+        sendGetRequest(req, url);
+    }
+
+    getHousesByName(name, config) {
+        const req = getRequest(config);
+        const url =  `${this.baseUrl}/houses?name=${name}`;
+        sendGetRequest(req, url);
+    }
+
+    getCharactersByName(name, config) {
+        const req = getRequest(config);
+        const url = `${this.baseUrl}/characters?name=${name}`;
+        sendGetRequest(req, url);
+    }
+}
