@@ -1,9 +1,15 @@
+import Service from './apiIceAndFire';
+import Printer from './printService';
+import {
+    caracthersMap,
+    housesMap, 
+} from './mapper';
+
 document.onreadystatechange = () => {
     const load = () => {
         const search_button = document.getElementById('search_button');
-        const service = new apiIceAndFire.Service();
-        const printer = new printService.Printer();
-        const apiMapper = mapper.apiMapper();
+        const service = new Service();
+        const printer = new Printer();
 
         search_button.addEventListener('click', (event) => {
             event.stopPropagation();
@@ -14,13 +20,13 @@ document.onreadystatechange = () => {
                 console.log('1');
                 const housesRequestConfig = {
                     err: handleError,
-                    callback: handleHousesRequestSucces(apiMapper, printer)
+                    callback: handleHousesRequestSucces(housesMap, printer)
                 };
                 service.getHousesByName(houseInput.value, housesRequestConfig);
                 console.log('2');
                 const charactersRequestConfig = {
                     err: handleError,
-                    callback: handleCharactersRequestSuccess(apiMapper, printer)
+                    callback: handleCharactersRequestSuccess(caracthersMap, printer)
                 };
                 service.getCharactersByName(characterInput.value, charactersRequestConfig);
                 console.log('3');
@@ -34,18 +40,18 @@ document.onreadystatechange = () => {
         console.log(JSON.parse(this.responseText));
     };
 
-    function handleHousesRequestSucces(apiMapper, printer) {
+    function handleHousesRequestSucces(housesMap, printer) {
         return function () {
             const data = JSON.parse(this.responseText);
-            const houses = apiMapper.housesMap(data);
+            const houses = housesMap(data);
             printer.printHouses(houses, 'houses');
         };
     };
 
-    function handleCharactersRequestSuccess(apiMapper, printer) {
+    function handleCharactersRequestSuccess(caracthersMap, printer) {
         return function () {
             const data = JSON.parse(this.responseText);
-            const characters = apiMapper.caracthersMap(data);
+            const characters = caracthersMap(data);
             printer.printCharacters(characters, 'characters');
         };
     }
