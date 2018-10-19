@@ -1,6 +1,69 @@
 ## Run to completion
 
-### 1. Let's have a look to the code that we have in `main.js`
+### 1. Let's creae code that will be blocking in some pint.
+
+```javascript
+document.onreadystatechange = () => {
+  if(document.readyState === 'complete') {
+    const btn = document.getElementById("button");
+    btn.addEventListener('click', (evt) => {
+      evt.stopPropagation();
+        // modify page
+      document.body.style.backgroundColor =  'lime';
+      let p = document.createElement("p");
+      p.innerText = "let's add some text to the page";
+      document.body.appendChild(p);
+      
+      // simulate blocking / long running operation
+      const start = Date.now();
+      const delaySeconds = 10;
+      while (Date.now() < start + delaySeconds * 1000) {}
+    });
+  }
+};
+```
+
+### 2. To have a little bit of better understanding lets refactor a bit
+
+```diff
+document.onreadystatechange = () => {
+  if(document.readyState === 'complete') {
+    const btn = document.getElementById("button");
+    btn.addEventListener('click', (evt) => {
+      evt.stopPropagation();
+-     // modify page
+-     document.body.style.backgroundColor =  'lime';
+-     let p = document.createElement("p");
+-     p.innerText = "let's add some text to the page";
+-     document.body.appendChild(p);
+-     
+-     // simulate blocking / long running operation
+-     const start = Date.now();
+-     const delaySeconds = 10;
+-     while (Date.now() < start + delaySeconds * 1000) {}
++     modifyPage();
++     blockingOperation();
+    });
+
++    const modifyPage = () => {
++      // modify page
++      document.body.style.backgroundColor =  'lime';
++      let p = document.createElement("p");
++      p.innerText = "let's add some text to the page";
++      document.body.appendChild(p);
++    };
++
++    const blockingOperation = () => {
++      // simulate blocking / long running operation
++      const start = Date.now();
++      const delaySeconds = 10;
++      while (Date.now() < start + delaySeconds * 1000) {}
++    }
+  }
+};
+```
+
+### 3. Let's have a look to the code that we have in `main.js`
 
 ```javascript
 btn.addEventListener('click', (evt) => {

@@ -8,8 +8,6 @@
 │   ├── js/
 |   |   ├── main.js
 │   ├── index.html
-│   └── bootstrap-theme.min.css
-├── gulpfile.js
 ├── package.json
 
 * Start from previous code demo.

@@ -1,4 +1,34 @@
-## What is the order of the prinrt numbers in console?
+## 1. Lets have a look to this code
+
+```javascript
+document.onreadystatechange = () => {
+    if(document.readyState === 'complete') {
+  
+      console.log('1');
+  
+      setTimeout(() => {
+  
+        console.log('2');
+  
+         setTimeout(() => {
+  
+           console.log('3');
+  
+         }, 0);
+  
+         console.log('4');
+  
+      }, 0);
+  
+      console.log('5');
+      
+    }
+  };
+
+```
+
+
+## 2.  What is the order of the prinrt numbers in console?
 
 1, 5, 2, 4, 3
 

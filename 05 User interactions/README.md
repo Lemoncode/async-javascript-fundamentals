@@ -11,8 +11,6 @@ https://codepen.io/patrickhlauke/pen/azbYWZ
 │   ├── js/
 |   |   ├── main.js
 │   ├── index.html
-│   └── bootstrap-theme.min.css
-├── gulpfile.js
 ├── package.json
 
 ## Steps.
@@ -136,7 +134,10 @@ document.onreadystatechange = () => {
 };
 
 ```
+* We are using data transfer:
+  - The `DataTransfer object` is used to hold the data that is being dragged during a drag and drop operation. It may hold one or more data items, each of one or more data types. 
+  - Reference: `https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer`
 * Drag and drop it's a great example of async sources, code that it's executed later.
 * Obviously these are user interactions, that it's getting the elements and moving around the page.
 * When we click the drag element and start the dragging around, the `dragstart` event it's triggered. The associated handler will be pushed to the queue, and later on executed.
-* How many little programs do we have here?
+* How many little programs do we have here? One per event handler plus the main one, 4.

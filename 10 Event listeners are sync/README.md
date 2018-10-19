@@ -8,7 +8,6 @@
 │   ├── js/
 |   |   ├── main.js
 │   ├── index.html
-├── gulpfile.js
 ├── package.json
 
 * Start from previous code demo.
@@ -45,34 +44,34 @@
 ```diff site.css
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
-body {
-  font-family: 'Raleway', sans-serif;
-}
+-body {
+-  font-family: 'Raleway', sans-serif;
+-}
+-
+-.container {
+-  padding: 2em;
+-}
+-
+-.container p {
+-  max-width: 70%;
+-  font-size: 0.9em;
+-  margin-top: 0.2em;
+-  margin-bottom: 0.2em;
+-  height: 2.3em;
+-}
+-
+-.container p img {
+-  max-width: 95%;
+-  max-height: 95%;
+-  position: relative;
+-  top: 0.7em;
+-  left: 1em;
+-}
 
-.container {
-  padding: 2em;
-}
-
-.container p {
-  max-width: 70%;
-  font-size: 0.9em;
-  margin-top: 0.2em;
-  margin-bottom: 0.2em;
-  height: 2.3em;
-}
-
-.container p img {
-  max-width: 95%;
-  max-height: 95%;
-  position: relative;
-  top: 0.7em;
-  left: 1em;
-}
-
-.container ul {
-  list-style: none;
-}
-
+-.container ul {
+-  list-style: none;
+-}
+-
 -progress {
 -  width: 80%;
 -  height: 20px;
@@ -121,3 +120,23 @@ body {
 * Tiene que ser así básicamente, para poder lanzar otra iteración del mismo evento.
 
 * NOTA: En el debugger nos podemos cercionar de ello, porque ambos estan en el call stack.
+
+### 4. Alternative `main.js` code.
+
+```javascript
+(() => {
+    const btn = document.getElementById('btn');
+    const logger = (message) => (evt) => {
+        evt.stopPropagation();
+        console.log(message);
+    };
+    btn.addEventListener('click', logger('first click'));
+    btn.addEventListener('click', logger('second click'));
+
+    setTimeout(() => {
+        console.log('pre-click');
+        btn.click();
+        console.log('post-click');
+    }, 0);
+})();
+```

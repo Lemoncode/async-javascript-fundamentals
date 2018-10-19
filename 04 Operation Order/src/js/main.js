@@ -3,11 +3,11 @@ document.onreadystatechange = () => {
   
       console.log('1');
   
-      setTimeout(function() {
+      setTimeout(() => {
   
         console.log('2');
   
-         setTimeout(function() {
+         setTimeout(() => {
   
            console.log('3');
   

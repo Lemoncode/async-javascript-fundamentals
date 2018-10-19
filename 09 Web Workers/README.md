@@ -10,8 +10,6 @@
 |   |   ├── crunchNumbers.js
 |   |   ├── background.js
 │   ├── index.html
-│   └── bootstrap-theme.min.css
-├── gulpfile.js
 ├── package.json
 
 * Start from previous code demo.
@@ -157,7 +155,7 @@ body {
 
 ```javascript longTask.js
 const longTask = (progressCalback) => {
-    for (let step = 0; step < 10; step++) {
+    for (let step = 0; step <= 10; step++) {
         progressCalback(step * 10);
         /*
          Use the developer tools to show that the console log is not blocked
@@ -178,7 +176,7 @@ longTask(postMessage);
 (() => {
     const progress = document.getElementById('worker-progress');
 
-    const longTaskWorker = new Worker('./js/longTask.js');
+    const longTaskWorker = new Worker('./longTask.js');
 
     longTaskWorker.onmessage = (message) => {
         progress.value = message.data;

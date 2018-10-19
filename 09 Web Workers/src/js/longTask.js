@@ -1,5 +1,5 @@
 const longTask = (progressCalback) => {
-    for (let step = 0; step < 10; step++) {
+    for (let step = 0; step <= 10; step++) {
         progressCalback(step * 10);
         /*
          Use the developer tools to show that the console log is not blocked
