@@ -35,8 +35,10 @@
 ```javascript
 import axios from 'axios';
 
+const BASE_URL = 'http://localhost:8000';
+
 export const grantAccess = () => (
-    axios.get('http://localhost:8000/api/access')
+    axios.get(`${BASE_URL}/api/access`)
 );
 ```
 
@@ -111,7 +113,7 @@ const setUp = () => {
     });
 };
 
-export default setUp();
+export default setUp;
 ```
 
 ### 7. Do not forgive to put the reference to interceptors on src/API/accessAPI.js
@@ -119,6 +121,7 @@ export default setUp();
 ```diff
 import axios from 'axios';
 +import setUp from './interceptors';
++setUp();
 
 export const grantAccess = () => (
     axios.get('http://localhost:8000/api/access')

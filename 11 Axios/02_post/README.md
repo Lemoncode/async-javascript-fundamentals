@@ -9,30 +9,33 @@
 import axios from 'axios';
 import { appendElement, createList } from '../view/uiBuilder';
 
+const BASE_URL = 'http://localhost:8000'
++
 +const errorHandler = (err) => console.log(err);
 +
 export const getBooks = () => {
-    axios.get('http://localhost:8000/api/books')
+    axios.get(`${BASE_URL}/api/books/`)
         .then((result) => {
-            let titles = [];
-            result.data.forEach((item) => {
-                titles.push(item.title);
-            });
-            const list = createList(titles);
-            appendElement('books-container', list);
+            const titles = result.data.map((i) => i.title);
+            appendElement(
+                'books-container',
+                createList(titles)
+            );
         })
 -        .catch((err) => console.log(err));
 +        .catch(errorHandler);
 };
 
 +export const postBook = (book) => {
-+    axios.post('http://localhost:8000/api/books', book)
++    axios.post(`${BASE_URL}/api/books/`, book)
 +        .then(() => getBooks())
 +        .catch(errorHandler);
 +};
 ```
 
-### 2. Lets change index.html to have a form, so we can post a new book to server.
+### 2. Lets change index.html to have a form, so we can post a new book to server. 
+
+* Paste this code after _div_ with _books-container id_.
 
 <div class="container-add-book">
     <form>
@@ -64,18 +67,18 @@ document.addEventListener('DOMContentLoaded', () => {
         event.stopPropagation();
         bookAPI.getBooks();
     });
-+    const conatinerAddBookFormSubmit = document.getElementById('conatiner-add-book-form-submit');
-+    conatinerAddBookFormSubmit.addEventListener('click', (event) => {
-+        event.preventDefault();
-+        event.stopPropagation();
-+        const book = {
-+            title: document.getElementById('title').value,
-+            author: document.getElementById('author').value,
-+            genre: document.getElementById('genre').value,
-+            read: document.getElementById('read').checked
-+        };
-+        bookAPI.postBook(book);
-+    });
++   const containerAddBookFormSubmit = document.querySelector('#container-add-book-form-submit');
++   containerAddBookFormSubmit.addEventListener('click', (event) => {
++       event.preventDefault();
++       event.stopPropagation();
++       const book = {
++           title: document.querySelector('#title').value,
++           author: document.querySelector('#author').value,
++           genre: document.querySelector('#genre').value,
++           read: document.querySelector('#read').checked
++       };
++       bookAPI.postBook(book);
++   });
 });
 ```
 

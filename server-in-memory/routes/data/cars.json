@@ -1,0 +1,38 @@
+[
+    {
+        "car_id": 1,
+        "name": "ABX",
+        "brand": "Tokiota",
+        "year_release": "1999"
+    },
+    {
+        "car_id": 2,
+        "name": "AZE",
+        "brand": "Tokiota",
+        "year_release": "1995"
+    },
+    {
+        "car_id": 3,
+        "name": "Colola",
+        "brand": "GIA",
+        "year_release": "2015"
+    },
+    {
+        "car_id": 57,
+        "name": "Maverick",
+        "brand": "Foo",
+        "year_release": "1965"
+    },
+    {
+        "car_id": 59,
+        "name": "Calel",
+        "brand": "HMI",
+        "year_release": "1975"
+    },
+    {
+        "car_id": 61,
+        "name": "Green Roaster",
+        "brand": "HMI",
+        "year_release": "1976"
+    }
+]

@@ -1,0 +1,27 @@
+{
+  "name": "rest_node",
+  "version": "1.0.0",
+  "description": "Create RESTful service with node express and mongo",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jaime Salas",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "gulp": "^3.9.1",
+    "gulp-mocha": "^3.0.1",
+    "gulp-nodemon": "^2.2.1",
+    "mongoose": "^4.6.4",
+    "should": "^11.1.1",
+    "sinon": "^1.17.6"
+  },
+  "devDependencies": {
+    "gulp-env": "^0.4.0",
+    "supertest": "^2.0.1"
+  }
+}

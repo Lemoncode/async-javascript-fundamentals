@@ -15,14 +15,10 @@ const ajax = (method, url, args) => (
             client.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         }
         client.onload = (event) => {
-            // TODO: Check status code.
-            const result = JSON.parse(event.target.response);
-            resolve(result);
+            resolve(event.target.responseText);
         };
         client.onerror = (event) => {
-            // TODO: Check status code.
-            const result = JSON.parse(event.target.responseText);
-            reject(result);
+            reject(event.target.statusText);
         };
         if (method === 'POST') {
             client.send(params);

@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
 +            ])
 +            .catch(errorHandler)
 +            .then((data) => {
-+                if (data.hasOwnProperty('weather')) {
++                if (JSON.parse(data).hasOwnProperty('weather')) {
 +                    handlerCurrentWeatherSuccess(mapper, drawer)(data);
 +                } else {
 +                    handlerForecastWeatherSuccess(mapper, drawer)(data);

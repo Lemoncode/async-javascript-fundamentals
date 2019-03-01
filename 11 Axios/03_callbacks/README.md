@@ -43,14 +43,13 @@ import * as bookAPI from './API/bookAPI';
 import { appendElement, createList } from './view/uiBuilder';
 
 +const onSuccess = (result) => {
-+    let titles = [];
-+    // Remove data to watch how error is handle.
-+    result.data.forEach((item) => {
-+        titles.push(item.title);
-+    });
-+    const list = createList(titles);
-+    appendElement('books-container', list);
-+};
++    appendElement(
++        'books-container',
++        createList(
++            result.data.map((i) => i.title)
++        )
++    );
++}
 +
 +const onError = (error) => console.log(error);
 +
@@ -75,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
 +        bookAPI.postBook(book)
 +            (
 +                onError,
-+                (result) => bookAPI.getBooks(onError, onSuccess)
++                (_) => bookAPI.getBooks(onError, onSuccess)
 +            );
 +    });
 });

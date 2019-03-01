@@ -4,9 +4,67 @@
 
 * Related link to get working async/await transpile https://stackoverflow.com/questions/33527653/babel-6-regeneratorruntime-is-not-defined
 
+### Before steps create project scaffolding
+
+* Create _package.json_, use `npm init` default initialization
+* Create _src_ folder on _rootDir_
+* Create _index.html_ on _rootDir_
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="./src/app.js"></script>
+</body>
+</html>
+
+```
+
+* Add dependencies
+
+```bash
+$ npm i babel-plugin-transform-runtime babel-runtime parcel -D
+```
+
+npm install babel --save-dev @babel/plugin-transform-regenerator
+npm install @babel/preset-env --save-dev
+
+* Create _.babelrc_ on _rootDir_
+
+```json
+{
+    "plugins": [
+        ["transform-runtime",
+        {
+            "polyfill": false,
+            "regenerator": true
+        }]
+    ]
+}
+```
+{
+  "presets": ["@babel/preset-env"],  
+  "plugins": ["@babel/plugin-transform-regenerator"]
+}
+
+* Add _start_ comand to _package.json_
+
+```diff
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
++   "start": "parcel index.html"
+},
+```
+
 ### 1. We are going to create a function that will retrieve the books, from our Book API
 
-* In `app.js` we type the following code:
+* In `src/app.js` we type the following code:
 
 ```javascript
 function showBooks() {

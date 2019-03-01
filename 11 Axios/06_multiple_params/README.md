@@ -1,6 +1,6 @@
 ## 6 Get Multiple Params
 
-### 1. Now we are going to performa get operation with multiple params. For that in mind lets add a new page `src/pages/booksearch.html`
+### 1. Now we are going to perform a get operation with multiple params. For that in mind lets add a new page `src/pages/booksearch.html`
 
 ```html
 <!doctype html>
@@ -8,7 +8,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>LEMONCODE 16/17 Async JavaScript jQuery</title>
+  <title>LEMONCODE 16/17 Async JavaScript</title>
   <link rel="stylesheet" href="../content/site.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
@@ -48,35 +48,30 @@
 
 ```diff
 import axios from 'axios';
-import { appendElement, createList } from '../view/uiBuilder';
 
-export const getBooks = () => (
-    axios.get('http://localhost:8000/api/books')
-);
+const BASE_URL = 'http://localhost:8000';
 
-+export const getBooksByParams = (params) => (
-+    axios.get('http://localhost:8000/api/books', params)
-+);
-
-export const postBook = (book) => () => (
-    axios.post('http://localhost:8000/api/books', book)
-);
+export const getBooks = () => axios.get(`${BASE_URL}/api/books/`);
++
++export const getBooksByParams = (params) => axios.get(`${BASE_URL}/api/books/`, params);
++
+export const postBook = (book) => axios.post(`${BASE_URL}/api/books/`, book);
 ```
 
-### 4. Create a new file pages/booksearch/main.js. This file will handle the retrieving params for our new opertion.
+### 4. Create a new file pages/booksearch/main.js. This file will handle the retrieving params for our new operation.
 
 ```javascript
 import * as bookAPI from '../../API/bookAPI';
 import { appendElement, createList } from '../../view/uiBuilder';
 
 const onSuccess = (result, container) => {
-    let titles = [];
-    // Remove data to watch how error is handle.
-    result.data.forEach((item) => {
-        titles.push(item.title);
-    });
-    const list = createList(titles);
-    appendElement(container, list);
+    // Remove data to watch how error is handle
+    appendElement(
+        container, 
+        createList(
+            result.data.map((i) =>i.title)
+        )
+    );
 };
 
 const onError = (error) => console.log(error);

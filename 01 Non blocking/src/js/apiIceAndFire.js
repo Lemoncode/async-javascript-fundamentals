@@ -1,5 +1,3 @@
-var apiIceAndFire = apiIceAndFire || {};
-
 const baseRequestFactory = ({err, callback}) => {
     const req = new XMLHttpRequest();
     req.onload = callback;
@@ -19,7 +17,7 @@ const getRequest = (config) => {
 };
 
 const sendGetRequest = (req, url) => {
-    req.open('get', url, true);
+    req.open('get', url , true); 
     req.send();
 };
 

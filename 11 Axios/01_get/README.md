@@ -9,19 +9,20 @@
 +import axios from 'axios';
 +import { appendElement, createList } from '../view/uiBuilder';
 +
++const BASE_URL = 'http://localhost:8000'
++
 export const getBooks = () => {
 - return [
 -     { title: 'testA', author: 'testA', genre: 'fiction', read: true },
 -     { title: 'testB', author: 'testB', genre: 'fiction', read: true }
 - ];
-+    axios.get('http://localhost/api/books')
++    axios.get(`${BASE_URL}/api/books/`)
 +        .then((result) => {
-+           let titles = [];
-+            result.data.forEach((item) => {
-+              titles.push(item.title);
-+            });
-+          const list = createList(titles);
-+           appendElement('books-container', list);
++           const titles = result.data.map((i) => i.title);
++           appendElement(
++               'books-container',
++               createList(titles)
++           );
 +      })
 +        .catch((err) => console.log(err));
 };
@@ -48,11 +49,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 * To get running mongod
 
-$ mongod
-"C:\Program Files\MongoDB\Server\3.4\bin\mongod.exe" --dbpath "D:\mongodb\data"
+$ mongod "C:\Program Files\MongoDB\Server\3.4\bin\mongod.exe" --dbpath "D:\mongodb\data"
 
 To get running mongo console
 $ mongo
 
-Now we can rtun the server
+Now we can start the server
 $ gulp
