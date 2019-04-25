@@ -112,6 +112,6 @@ document.getElementById('content').innerHTML = 'Main content from JS';
 +    document.getElementById('content').innerHTML = 'Main content from JS';
 +}, 100);
 ```
-* En la función de arriba, cuando pasen 100 ms, esa función que estamos suministrando aquí será empujada a la cola del event loop, y una vez que se ejecute, lo que sea que estuvierá por delante se ejecuté, entonces después esta, función comnzará su ejecución. Esto, nos muestra un aspecto importante de esta función, no hay garatía sea llamada exactamente a los 100ms, cuando es alcanzada. A los 100ms, será empujada a  la cola, pero si hay mucho trabajo, en frente, tendrá que esperar a que ese trabajo, se ejecute antes. 
+* En la función de arriba, cuando pasen 100 ms, esa función que estamos suministrando aquí será empujada a la cola del event loop, y una vez que se ejecute, lo que sea que estuvierá por delante se ejecuté, entonces después esta, función comnzará su ejecución. Esto, nos muestra un aspecto importante de esta función, no hay garantía de que sea llamada exactamente a los 100ms, cuando es alcanzada en la ejecución de la hebra princpal. A los 100ms, será empujada a  la cola, pero si hay mucho trabajo, en frente, tendrá que esperar a que ese trabajo, se ejecute antes. 
 
 * Analogía con un dietario.

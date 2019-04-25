@@ -1,6 +1,29 @@
 ## Run to completion
 
-### 1. Let's creae code that will be blocking in some pint.
+* The html for this demo
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="content/site.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="button">Click me!</button>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
+
+```
+
+### 1. Let's creae code that will be blocking in some point.
 
 ```javascript
 document.onreadystatechange = () => {

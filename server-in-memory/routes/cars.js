@@ -58,7 +58,7 @@ router.route('/:id')
     .get((req, res) => {
         var data = getCarData();
         var matchingCar = data.find(
-            (item) => item.car_id === req.params.id
+            (item) => item.car_id === +req.params.id
         );
 
         if(!matchingCar) {

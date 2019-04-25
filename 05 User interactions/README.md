@@ -25,13 +25,13 @@ https://codepen.io/patrickhlauke/pen/azbYWZ
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>LEMONCODE 16/17 jQuery</title>
+  <title>User interactions demo</title>
   <link rel="stylesheet" href="content/site.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 
 <body>
-  <h1>API Rest</h1>
+  <h1>Drag and drop</h1>
   <div id="drag-element" draggable="true" class="drag"></div>
   <br>
   <div id="drop-element-a" class="drop"></div>
