@@ -48,7 +48,7 @@ const accessRouter = require('./Routes/accessRoutes')();
 app.use('/api/books', bookRouter);
 app.use('/api/authors', authorRouter);
 app.use('/api/access', accessRouter);
-app.get('/', (req, res) => res.send('welcome to my API!')); // We are sending just a string
+app.get('/', (_, res) => res.send('welcome to my API!')); // We are sending just a string
 
 app.listen(port, function() {
   console.log('Gulp is running my app on PORT: ' + port);

@@ -1,0 +1,11 @@
+version: '3.7'
+services: 
+  mongodb:
+    image: mongo:3.2
+    container_name: 'mongodb'
+    volumes:
+    - mongodbdata:/data/db
+    ports:
+    - "27017:27017"
+volumes:
+  mongodbdata:
