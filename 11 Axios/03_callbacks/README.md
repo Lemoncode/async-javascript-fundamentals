@@ -2,7 +2,7 @@
 
 ## 3 Using callbacks
 
-### 1. Currently our bookService is doing several things, it is calling the server for data and then hndling the response, and displaying data. Lets start to honor SRP, and start by passing callbacks that could be passed from outsite of service. 
+### 1. Currently our bookService is doing several things, it is calling the server for data handling the response, and displaying data. Lets start to honor SRP, and start by passing callbacks that could be passed from outsite of our service to segregate responsabilities. 
 
 ```diff bookAPI.js
 import axios from 'axios';

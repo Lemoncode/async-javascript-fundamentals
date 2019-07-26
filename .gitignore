@@ -60,3 +60,5 @@ typings/
 # Build folders parcel
 dist/
 .cache
+
+.DS_store

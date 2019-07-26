@@ -141,7 +141,7 @@ export const retrieveBook = (bookId) => {
     });
 }
 ```
-* Notice that fetch is prepared to always a promise, even the success result.
+* Notice that fetch is prepared to always return a promise, even the success result.
 
 ### 5. Now let's define the src/js/main.js and check that is working on happy path
 

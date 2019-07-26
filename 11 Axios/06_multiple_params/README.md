@@ -1,6 +1,6 @@
 ## 6 Get Multiple Params
 
-### 1. Now we are going to perform a get operation with multiple params. For that in mind lets add a new page `src/pages/booksearch.html`
+### 1. Now we are going to perform a get operation with multiple params. With that on mind lets add a new page `src/pages/booksearch.html`
 
 ```html
 <!doctype html>
@@ -49,13 +49,13 @@
 ```diff
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:8000';
+const baseUrl = 'http://localhost:8000';
 
-export const getBooks = () => axios.get(`${BASE_URL}/api/books/`);
+export const getBooks = () => axios.get(`${baseUrl}/api/books/`);
 +
-+export const getBooksByParams = (params) => axios.get(`${BASE_URL}/api/books/`, params);
++export const getBooksByParams = (params) => axios.get(`${baseUrl}/api/books/`, params);
 +
-export const postBook = (book) => axios.post(`${BASE_URL}/api/books/`, book);
+export const postBook = (book) => axios.post(`${baseUrl}/api/books/`, book);
 ```
 
 ### 4. Create a new file pages/booksearch/main.js. This file will handle the retrieving params for our new operation.

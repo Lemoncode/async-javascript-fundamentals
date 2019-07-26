@@ -1,6 +1,8 @@
 ## To start mongo with docker:
 
 > Reference: https://www.thepolyglotdeveloper.com/2019/01/getting-started-mongodb-docker-container-deployment/
+> Reference: https://dev.to/jay97/docker-compose-an-express-and-mongo-app-aai
+> Refereence: https://nodejs.org/de/docs/guides/nodejs-docker-webapp/
 
 ```bash
 docker-compose up -d

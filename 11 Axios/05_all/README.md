@@ -5,10 +5,10 @@
 ```javascript
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:8000';
+const baseUrl = 'http://localhost:8000';
 
 export const getAuthors = () => (
-    axios.get(`${BASE_URL}/api/authors`)
+    axios.get(`${baseUrl}/api/authors`)
 );
 ```
 
