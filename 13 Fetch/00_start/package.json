@@ -1,0 +1,20 @@
+{
+  "name": "fetch-fundamentals",
+  "version": "0.0.0",
+  "description": "A repository to learn the fetch basics",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "fetch",
+    "async",
+    "javascript"
+  ],
+  "author": "Jaime Salas",
+  "license": "MIT",
+  "devDependencies": {
+    "parcel": "^1.12.3"
+  }
+}
