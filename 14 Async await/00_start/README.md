@@ -28,30 +28,23 @@
 
 * Add dependencies
 
-```bash
-$ npm i babel-plugin-transform-runtime babel-runtime parcel -D
-```
+> https://stackoverflow.com/questions/50907975/babel-regeneratorruntime-is-not-defined-when-using-transform-async-to-generat
 
-npm install babel --save-dev @babel/plugin-transform-regenerator
-npm install @babel/preset-env --save-dev
+```bash
+npm install --save-dev @babel/core
+npm install --save-dev @babel/plugin-transform-runtime
+npm install --save @babel/runtime
+```
 
 * Create _.babelrc_ on _rootDir_
 
 ```json
 {
     "plugins": [
-        ["transform-runtime",
-        {
-            "polyfill": false,
-            "regenerator": true
-        }]
+        "@babel/plugin-transform-runtime"
     ]
 }
 ```
-{
-  "presets": ["@babel/preset-env"],  
-  "plugins": ["@babel/plugin-transform-regenerator"]
-}
 
 * Add _start_ comand to _package.json_
 

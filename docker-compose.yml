@@ -1,0 +1,20 @@
+version: '3.7'
+services: 
+  app:
+    container_name: book-server
+    environment:
+    - ENVIRONMENT=mongodb:27017
+    build: ./server-mongo
+    ports: 
+    - "8000:8000"
+    depends_on:
+    - mongodb
+  mongodb:
+    image: mongo:3.2
+    container_name: 'mongodb'
+    volumes:
+    - mongodbdata:/data/db
+    ports:
+    - "27017:27017"
+volumes:
+  mongodbdata:

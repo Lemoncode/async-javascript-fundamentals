@@ -1,4 +1,26 @@
-## To start mongo
+## To start mongo with docker:
+
+> Reference: https://www.thepolyglotdeveloper.com/2019/01/getting-started-mongodb-docker-container-deployment/
+> Reference: https://dev.to/jay97/docker-compose-an-express-and-mongo-app-aai
+> Refereence: https://nodejs.org/de/docs/guides/nodejs-docker-webapp/
+
+```bash
+docker-compose up -d
+```
+
+```bash
+docker exec -it mongodb bash 
+```
+
+* This will open a terminal from where we can connect directly to mongo:
+
+```bash
+mongo
+```
+
+
+
+## To start mongo with installed insatance windows:
 
 * mongod --dbpath D:/mongodb/data
 

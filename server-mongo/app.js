@@ -3,7 +3,9 @@ const express = require('express'),
       app = express(),
       port = process.env.PORT || 3000,
       mongoose = require('mongoose'),
-      bodyParser = require('body-parser');
+      bodyParser = require('body-parser')
+      dotenv = require('dotenv');
+      dotenv.config();
 
    // mongoose.connect('mongodb://localhost/bookAPI')
 
@@ -34,9 +36,11 @@ let db;
 mongoose.Promise = global.Promise;
 
 if(process.env.ENV === 'Test') {
-  db = mongoose.connect('mongodb://localhost/bookAPI_test'); // Our database is going to connect here in tests environment
+  // db = mongoose.connect('mongodb://localhost/bookAPI_test'); // Our database is going to connect here in tests environment
+  db = mongoose.connect(`mongodb://${process.env.ENVIRONMENT}/bookAPI_test`); // Our database is going to connect here in tests environment
 } else {
-  db = mongoose.connect('mongodb://localhost/bookAPI');
+  // db = mongoose.connect('mongodb://localhost/bookAPI'); // Local
+  db = mongoose.connect(`mongodb://${process.env.ENVIRONMENT}/bookAPI`); // docker
 }
 
 const Book =  require('./models/bookModel'); // We get the mongoose schema to work with it.
@@ -48,7 +52,7 @@ const accessRouter = require('./Routes/accessRoutes')();
 app.use('/api/books', bookRouter);
 app.use('/api/authors', authorRouter);
 app.use('/api/access', accessRouter);
-app.get('/', (req, res) => res.send('welcome to my API!')); // We are sending just a string
+app.get('/', (_, res) => res.send('welcome to my API!')); // We are sending just a string
 
 app.listen(port, function() {
   console.log('Gulp is running my app on PORT: ' + port);
