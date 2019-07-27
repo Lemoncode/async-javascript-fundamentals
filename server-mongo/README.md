@@ -25,3 +25,8 @@ mongo
 ```bash
 > db.<collection>.find()
 ```
+
+* Remove element by Id from mongo console
+```javascript
+db.books.remove({"_id": ObjectId("5d322fcba8a0243b90fd2f95")});
+```
