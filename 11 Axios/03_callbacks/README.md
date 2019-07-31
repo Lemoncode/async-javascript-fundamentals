@@ -27,7 +27,7 @@ export const getBooks = (err, success) => {
 };
 
 - export const postBook = (book) => {
-export const postBook = (book) => (err, success) => {
++export const postBook = (book) => (err, success) => {
     axios.post('http://localhost:8000/api/books', book)
 -       .then(() => getBooks())
 -       .catch(errorHandler);
