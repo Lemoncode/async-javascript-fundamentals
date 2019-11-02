@@ -17,7 +17,7 @@
     "gulp": "~3.9.1",
     "gulp-mocha": "~3.0.1",
     "gulp-nodemon": "~2.2.1",
-    "mongoose": "^4.6.4",
+    "mongoose": "^5.7.5",
     "should": "^11.1.1",
     "sinon": "^1.17.6"
   },
