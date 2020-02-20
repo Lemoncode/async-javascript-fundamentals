@@ -36,11 +36,11 @@ let db;
 mongoose.Promise = global.Promise;
 
 if(process.env.ENV === 'Test') {
-  db = mongoose.connect('mongodb://localhost/bookAPI_test'); // Our database is going to connect here in tests environment
-  //db = mongoose.connect(`mongodb://${process.env.ENVIRONMENT}/bookAPI_test`); // Our database is going to connect here in tests environment
+  // db = mongoose.connect('mongodb://localhost/bookAPI_test'); // Our database is going to connect here in tests environment
+  db = mongoose.connect(`mongodb://${process.env.ENVIRONMENT}/bookAPI_test`); // Our database is going to connect here in tests environment
 } else {
-  db = mongoose.connect('mongodb://localhost/bookAPI'); // Local
-  // db = mongoose.connect(`mongodb://${process.env.ENVIRONMENT}/bookAPI`); // docker
+  // db = mongoose.connect('mongodb://localhost/bookAPI'); // Local
+  db = mongoose.connect(`mongodb://${process.env.ENVIRONMENT}/bookAPI`); // docker
 }
 
 const Book =  require('./models/bookModel'); // We get the mongoose schema to work with it.
