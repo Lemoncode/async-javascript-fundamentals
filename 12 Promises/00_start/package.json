@@ -13,7 +13,9 @@
   ],
   "author": "Jaime Salas",
   "license": "MIT",
-  "dependencies": {
-    "parcel": "^1.8.1"
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "parcel": "^1.12.4"
   }
 }

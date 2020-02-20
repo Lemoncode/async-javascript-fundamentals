@@ -33,7 +33,6 @@ showBooksAndAuthors();
 
 ### 3. To make this on parallel, we can refactor this to achieve this behavior.
 
-
 ```diff app.js
 import { 
     fetchFromApi 
