@@ -1,8 +1,27 @@
 ## Introduction to async/await
 
-> Reference: https://github.com/parcel-bundler/parcel/issues/871
+> Remember to have up and running api server:
 
-* Related link to get working async/await transpile https://stackoverflow.com/questions/33527653/babel-6-regeneratorruntime-is-not-defined
+* To get running mongod
+
+$ mongod "C:\Program Files\MongoDB\Server\3.4\bin\mongod.exe" --dbpath "D:\mongodb\data"
+
+To get running mongo console
+$ mongo
+
+Now we can start the server
+$ gulp
+
+* To get running via docker, from project root folder
+
+$ docker-compose up
+
+* To get running server-mock, from ./server-mock
+
+$ npm start
+
+* Development URL: http://localhost:8000/api/books/
+
 
 ### Before steps create project scaffolding
 

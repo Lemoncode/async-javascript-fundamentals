@@ -1,5 +1,27 @@
 ## In this demo we are going to use `Promise.all`.
 
+> Remember to have up and running api server:
+
+* To get running mongod
+
+$ mongod "C:\Program Files\MongoDB\Server\3.4\bin\mongod.exe" --dbpath "D:\mongodb\data"
+
+To get running mongo console
+$ mongo
+
+Now we can start the server
+$ gulp
+
+* To get running via docker, from project root folder
+
+$ docker-compose up
+
+* To get running server-mock, from ./server-mock
+
+$ npm start
+
+* Development URL: http://localhost:8000/api/books/
+
 * Ensure that the `src/api` looks this way
 
 ``` javascript
