@@ -56,3 +56,11 @@ $ mongo
 
 Now we can start the server
 $ gulp
+
+* To get running via docker, from project root folder
+
+$ docker-compose up
+
+* To get running server-mock, from ./server-mock
+
+$ npm start

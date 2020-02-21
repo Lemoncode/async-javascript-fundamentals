@@ -38,13 +38,15 @@
 ```
 
 
-### 2. Lets add an anchor to this page on index.html
+### 2. Lets add an anchor to this page on ./index.html
 
 ```html
 <a href="./src/pages/booksearch.html">Book search</a>
 ```
 
 ### 3. Now we have to modify our bookAPI.js, with a new operation, that carries the params to the server.
+
+Edit __.src\API\bookAPI.js__
 
 ```diff
 import axios from 'axios';
@@ -99,13 +101,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
 ### 5. We have to get the server and mongo running in order to get this working.
 
-To get running mongod
+* To get running mongod
 
-$ mongod
-"C:\Program Files\MongoDB\Server\3.4\bin\mongod.exe" --dbpath "D:\mongodb\data"
+$ mongod "C:\Program Files\MongoDB\Server\3.4\bin\mongod.exe" --dbpath "D:\mongodb\data"
 
 To get running mongo console
 $ mongo
 
-Now we can run the server
+Now we can start the server
 $ gulp
+
+* To get running via docker, from project root folder
+
+$ docker-compose up
+
+* To get running server-mock, from ./server-mock
+
+$ npm start

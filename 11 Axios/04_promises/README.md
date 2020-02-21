@@ -77,13 +77,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
 ### 3. We have to get the server and mongo running in order to get this working.
 
-To get running mongod
+* To get running mongod
 
-$ mongod
-"C:\Program Files\MongoDB\Server\3.4\bin\mongod.exe" --dbpath "D:\mongodb\data"
+$ mongod "C:\Program Files\MongoDB\Server\3.4\bin\mongod.exe" --dbpath "D:\mongodb\data"
 
 To get running mongo console
 $ mongo
 
-Now we can rtun the server
+Now we can start the server
 $ gulp
+
+* To get running via docker, from project root folder
+
+$ docker-compose up
+
+* To get running server-mock, from ./server-mock
+
+$ npm start

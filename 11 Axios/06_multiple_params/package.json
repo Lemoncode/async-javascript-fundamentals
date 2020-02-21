@@ -11,7 +11,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "parcel": "^1.8.1"
+    "@babel/core": "^7.8.4",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "parcel": "^1.12.4"
   },
   "dependencies": {
     "axios": "^0.18.0"

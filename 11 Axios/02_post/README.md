@@ -35,25 +35,48 @@ export const getBooks = () => {
 
 ### 2. Lets change index.html to have a form, so we can post a new book to server. 
 
-* Paste this code after _div_ with _books-container id_.
+* Edit as follows __.\index.html__.
 
-<div class="container-add-book">
-    <form>
-        Title:</br>
-        <input type="text" id="title" name="title" />
-        <br/>
-        Genre:</br>
-        <input type="text" id="genre" name="genre" />
-        <br/>
-        Author:</br>
-        <input type="text" id="author" name="author" />
-        </br>
-        Have you read this book?:</br>
-        <input type="checkbox" id="read" name="read" />
-        </br></br>
-        <button id="container-add-book-form-submit">Add book</button>
-    </form>
-</div>
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./src/content/site.css">
+</head>
+
+<body>
+    <div id="books-container" class="container">
+        <button id="button-retrieve-books">Retrieve books</button>
+    </div>
+    <!-- diff -->
+    <div class="container-add-book">
+        <form>
+            Title:</br>
+            <input type="text" id="title" name="title" />
+            <br/>
+            Genre:</br>
+            <input type="text" id="genre" name="genre" />
+            <br/>
+            Author:</br>
+            <input type="text" id="author" name="author" />
+            </br>
+            Have you read this book?:</br>
+            <input type="checkbox" id="read" name="read" />
+            </br></br>
+            <button id="container-add-book-form-submit">Add book</button>
+        </form>
+    </div>
+    <!-- diff -->
+    <script src="./src/app.js"></script>
+</body>
+
+</html>
+```
 
 ### 3. Now we have to change app.js
 
@@ -85,13 +108,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
 ### 4. We have to get the server and mongo running in order to get this working.
 
-To get running mongod
+* To get running mongod
 
-$ mongod
-"C:\Program Files\MongoDB\Server\3.4\bin\mongod.exe" --dbpath "D:\mongodb\data"
+$ mongod "C:\Program Files\MongoDB\Server\3.4\bin\mongod.exe" --dbpath "D:\mongodb\data"
 
 To get running mongo console
 $ mongo
 
-Now we can rtun the server
+Now we can start the server
 $ gulp
+
+* To get running via docker, from project root folder
+
+$ docker-compose up
+
+* To get running server-mock, from ./server-mock
+
+$ npm start
+

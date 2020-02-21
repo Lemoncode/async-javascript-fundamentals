@@ -2,7 +2,46 @@
 
 ## 3 Using callbacks
 
-### 1. Currently our bookService is doing several things, it is calling the server for data handling the response, and displaying data. Lets start to honor SRP, and start by passing callbacks that could be passed from outsite of our service to segregate responsabilities. 
+### 1. Update parcel dependenies
+
+Add ./.babelrc
+
+```json
+{
+    "plugins": [
+        "@babel/plugin-proposal-class-properties"
+    ]
+}
+```
+
+Update ./package.json
+
+```diff
+{
+  "name": "00_get_started",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
++   "@babel/core": "^7.8.4",
++   "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "parcel": "^1.12.4"
+  },
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
+}
+
+```
+
+### 2. Currently our bookService is doing several things, it is calling the server for data handling the response, and displaying data. Lets start to honor SRP, and start by passing callbacks that could be passed from outsite of our service to segregate responsabilities. 
 
 ```diff bookAPI.js
 import axios from 'axios';
@@ -82,13 +121,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
 ### 3. We have to get the server and mongo running in order to get this working.
 
-To get running mongod
+* To get running mongod
 
-$ mongod
-"C:\Program Files\MongoDB\Server\3.4\bin\mongod.exe" --dbpath "D:\mongodb\data"
+$ mongod "C:\Program Files\MongoDB\Server\3.4\bin\mongod.exe" --dbpath "D:\mongodb\data"
 
 To get running mongo console
 $ mongo
 
-Now we can rtun the server
+Now we can start the server
 $ gulp
+
+* To get running via docker, from project root folder
+
+$ docker-compose up
+
+* To get running server-mock, from ./server-mock
+
+$ npm start
+
