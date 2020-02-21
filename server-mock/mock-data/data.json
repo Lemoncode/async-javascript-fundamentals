@@ -1,0 +1,19 @@
+{
+    "authors": [
+        {
+            "id": 1,
+            "name": "Laika",
+            "lastName": "Dog",
+            "birthDate": "date"
+        }
+    ],
+    "books": [
+        {
+            "id": 1,
+            "title": "bone",
+            "author": "Laika",
+            "genre": "comedy",
+            "read": true
+        }
+    ]
+}
