@@ -1,19 +1,26 @@
 {
-    "authors": [
-        {
-            "id": 1,
-            "name": "Laika",
-            "lastName": "Dog",
-            "birthDate": "date"
-        }
-    ],
-    "books": [
-        {
-            "id": 1,
-            "title": "bone",
-            "author": "Laika",
-            "genre": "comedy",
-            "read": true
-        }
-    ]
+  "authors": [
+    {
+      "id": 1,
+      "name": "Laika",
+      "lastName": "Dog",
+      "birthDate": "date"
+    }
+  ],
+  "books": [
+    {
+      "id": 1,
+      "title": "bone",
+      "author": "Laika",
+      "genre": "comedy",
+      "read": true
+    },
+    {
+      "title": "Lord of flies",
+      "author": "William Goldwing",
+      "genre": "Drama",
+      "read": "on",
+      "id": 2
+    }
+  ]
 }
