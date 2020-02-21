@@ -53,6 +53,7 @@ $ npm start
 npm install --save-dev @babel/core
 npm install --save-dev @babel/plugin-transform-runtime
 npm install --save @babel/runtime
+npm install --save parcel
 ```
 
 * Create _.babelrc_ on _rootDir_
@@ -95,6 +96,8 @@ showBooks();
 ### 2. Now we are going to transform this code into async / await style.
 
 ```diff
++ import "regenerator-runtime/runtime";
+
 -function showBooks() {
 +async function showBooks() {
     const url = 'http://localhost:8000/api/books/';
@@ -205,7 +208,7 @@ showBooks()
 
 ```javascript src/api/BookApiClient.js
 export class BookApiClient {
-    async fetchUser() {
+    async fetchBooks() {
         const url = 'http://localhost:8000/api/books/';
         const response = await fetch(url);
         return await response.json();

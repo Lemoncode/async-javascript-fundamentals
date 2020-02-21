@@ -53,12 +53,16 @@ export async function showBooks(url) {
 +    return body;
 }
 ```
+
 * Automatically rejects the promise, because of 'throw Error' 
+
 * Now here we have two different scenarios:
+
 ```javascript
 const url = `http://localhost:8000/api/boos/`; // Wrong url. // 
 const url2 = `http://localhost:8000/api/books/5
 ```
+
 * The first one no internal route it's handle by our code (no controller responds to that route). In this case there is not response error handle from 
 
 * In the second case, the response it's handle from our controller's code sending to us a 500. 

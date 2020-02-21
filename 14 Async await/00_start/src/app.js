@@ -1,3 +1,4 @@
+import "regenerator-runtime/runtime";
 // async function showBooks() {
 //     const url = 'http://localhost:8000/api/books/';
 //     const response = await fetch(url);
