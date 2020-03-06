@@ -17,8 +17,7 @@ app.use(cookieParser());
 app.use(cors());
 const jwtCheck = expressjwt({
     secret: 'mysupersecretkey',
-})
-
+});
 
 app.use('/api/users', jwtCheck, users);
 app.use('/api/cars', jwtCheck, cars);

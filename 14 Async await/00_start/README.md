@@ -25,7 +25,7 @@ $ npm start
 
 ### Before steps create project scaffolding
 
-* Create _package.json_, use `npm init` default initialization
+* Create _package.json_, use `npm init -y` default initialization
 * Create _src_ folder on _rootDir_
 * Create _index.html_ on _rootDir_
 

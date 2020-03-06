@@ -255,4 +255,4 @@ document.addEventListener('DOMContentLoaded', () => {
     /*diff*/
 });
 ```
-* Lets test that is working, with and without authenticaton
+* Let's test that is working, with and without authenticaton

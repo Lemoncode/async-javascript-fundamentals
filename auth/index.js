@@ -3,7 +3,6 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const { resolveLogin } = require('./credentialResolver');
 
-
 const app = express();
 const PORT = process.env.PORT || 8887;
 
