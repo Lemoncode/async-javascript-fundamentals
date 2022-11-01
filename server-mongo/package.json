@@ -14,9 +14,9 @@
     "cors": "^2.8.1",
     "dotenv": "^8.0.0",
     "express": "^4.14.0",
-    "gulp": "~3.9.1",
+    "gulp": "~4.0.2",
     "gulp-mocha": "~3.0.1",
-    "gulp-nodemon": "~2.2.1",
+    "gulp-nodemon": "~2.5.0",
     "mongoose": "^4.6.4",
     "should": "^11.1.1",
     "sinon": "^1.17.6"
