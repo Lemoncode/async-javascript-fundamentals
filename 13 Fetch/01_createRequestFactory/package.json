@@ -13,6 +13,6 @@
   "author": "Jaime Salas",
   "license": "MIT",
   "devDependencies": {
-    "parcel": "^1.8.1"
+    "parcel": "^2.8.2"
   }
 }
